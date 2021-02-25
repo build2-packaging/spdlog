@@ -4,7 +4,6 @@ import impl_libs += fmt%lib{fmt}
 
 lib{spdlog}: $include_dir/hxx{**} $src_dir/cxx{**} {hxx cxx}{** -version} hxx{version} \
              $impl_libs $intf_libs
-lib{spdlog}: cxx.poptions += -DSPDLOG_FMT_EXTERNAL
 
 if ($cxx.target.class != 'windows')
 {
@@ -27,10 +26,15 @@ cxx.poptions =+ "-I$out_root" "-I$src_root"
 
 objs{*}: cxx.poptions += -DSPDLOG_SHARED_LIB -DFMT_EXPORT -DFMT_SHARED
 
+../upstream/include/spdlog/
+{
+    cxx.poptions += -DSPDLOG_FMT_EXTERNAL
+}
+
 ../upstream/src/
 {
     cxx.poptions =+ "-I$include_dir" "-I$out_root" "-I$src_root"
-    cxx.poptions += -DSPDLOG_COMPILED_LIB
+    cxx.poptions += -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL
     objs{*}: cxx.poptions += -DFMT_EXPORT -DFMT_SHARED
 }
 
