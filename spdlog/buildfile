@@ -2,7 +2,7 @@ intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
 import impl_libs += fmt%lib{fmt}
 
-lib{spdlog}: $include_dir/hxx{**} $src_dir/cxx{**} {hxx cxx}{** -version} hxx{version} \
+lib{spdlog}: include/hxx{**} src/cxx{**} {hxx cxx}{** -version} hxx{version} \
              $impl_libs $intf_libs
 lib{spdlog}: cxx.poptions += -DSPDLOG_FMT_EXTERNAL
 
@@ -27,9 +27,9 @@ cxx.poptions =+ "-I$out_root" "-I$src_root"
 
 objs{*}: cxx.poptions += -DSPDLOG_SHARED_LIB -DFMT_EXPORT -DFMT_SHARED
 
-../upstream/src/
+src/
 {
-    cxx.poptions =+ "-I$include_dir" "-I$out_root" "-I$src_root"
+    cxx.poptions =+ "-I$src_base/include" "-I$out_root" "-I$src_root"
     cxx.poptions += -DSPDLOG_COMPILED_LIB
     objs{*}: cxx.poptions += -DFMT_EXPORT -DFMT_SHARED
 }
@@ -62,7 +62,7 @@ else
   install.subdirs = true
 }
 
-../upstream/include/spdlog/
+include/spdlog/
 {
     {hxx ixx txx}{*}:
     {
