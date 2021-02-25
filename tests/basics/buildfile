@@ -1,0 +1,3 @@
+import libs = spdlog%lib{spdlog}
+
+exe{driver}: ../../upstream/tests/hxx{**} ../../upstream/tests/cxx{**} $libs testscript{**}

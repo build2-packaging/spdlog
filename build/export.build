@@ -1,0 +1,6 @@
+$out_root/
+{
+  include spdlog/
+}
+
+export $out_root/spdlog/$import.target
