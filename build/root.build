@@ -15,4 +15,3 @@ test.target = $cxx.target
 #
 include_dir = $src_root/upstream/include
 src_dir = $src_root/upstream/src
-test_dir = $src_root/upstream/tests
