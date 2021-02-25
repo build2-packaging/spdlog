@@ -1,12 +1,10 @@
 intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
 import impl_libs += fmt%lib{fmt}
-#import impl_libs += libhello%lib{hello}
 
 lib{spdlog}: $include_dir/hxx{**} $src_dir/cxx{**} {hxx cxx}{** -version} hxx{version} \
              $impl_libs $intf_libs
-
-cxx.poptions += -DSPDLOG_FMT_EXTERNAL
+lib{spdlog}: cxx.poptions += -DSPDLOG_FMT_EXTERNAL
 
 if ($cxx.target.class != 'windows')
 {
