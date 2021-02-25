@@ -4,7 +4,12 @@ impl_libs = # Implementation dependencies.
 
 lib{spdlog}: $include_dir/hxx{**} $src_dir/cxx{**} {hxx cxx}{** -version} hxx{version} \
              $impl_libs $intf_libs
-lib{spdlog}: cxx.libs += -lpthread
+lib{spdlog}: cxx.poptions += -DSPDLOG_FMT_EXTERNAL
+
+if ($cxx.target.class != 'windows')
+{
+    lib{spdlog}: cxx.libs += -lpthread
+}
 
 # Include the generated version header into the distribution (so that we don't
 # pick up an installed one) and don't remove it when cleaning in src (so that
@@ -19,8 +24,6 @@ hxx{version}: in{version} $src_root/manifest
 # Build options.
 #
 cxx.poptions =+ "-I$out_root" "-I$src_root"
-
-cc.poptions += -DSPDLOG_COMPILED_LIB
 
 objs{*}: cxx.poptions += -DSPDLOG_SHARED_LIB -DFMT_EXPORT -DFMT_SHARED
 
