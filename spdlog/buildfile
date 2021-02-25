@@ -3,11 +3,13 @@ impl_libs = # Implementation dependencies.
 import impl_libs += fmt%lib{fmt}
 
 lib{spdlog}: {cxx hxx}{**} $impl_libs $intf_libs
-lib{spdlog}: cxx.poptions += -DSPDLOG_FMT_EXTERNAL
+
+cxx.poptions += -DSPDLOG_FMT_EXTERNAL
 
 if ($cxx.target.class != 'windows')
 {
-    lib{spdlog}: cxx.libs += -lpthread
+  cc.libs += -lpthread
+  lib{spdlog} : cc.export.libs += -lpthread
 }
 
 # Note from Klaim: removed because spdlog already provides a version.h file.
