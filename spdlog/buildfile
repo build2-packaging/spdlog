@@ -2,8 +2,7 @@ intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
 import impl_libs += fmt%lib{fmt}
 
-lib{spdlog}: include/hxx{**} src/cxx{**} {hxx cxx}{** -version} hxx{version} \
-             $impl_libs $intf_libs
+lib{spdlog}: {cxx hxx}{**} $impl_libs $intf_libs
 lib{spdlog}: cxx.poptions += -DSPDLOG_FMT_EXTERNAL
 
 if ($cxx.target.class != 'windows')
@@ -11,25 +10,25 @@ if ($cxx.target.class != 'windows')
     lib{spdlog}: cxx.libs += -lpthread
 }
 
-# Include the generated version header into the distribution (so that we don't
-# pick up an installed one) and don't remove it when cleaning in src (so that
-# clean results in a state identical to distributed).
-#
-hxx{version}: in{version} $src_root/manifest
-{
-  dist  = true
-  clean = ($src_root != $out_root)
-}
+# Note from Klaim: removed because spdlog already provides a version.h file.
+# # Include the generated version header into the distribution (so that we don't
+# # pick up an installed one) and don't remove it when cleaning in src (so that
+# # clean results in a state identical to distributed).
+# #
+# hxx{version}: in{version} $src_root/manifest
+# {
+#   dist  = true
+#   clean = ($src_root != $out_root)
+# }
 
 # Build options.
 #
-cxx.poptions =+ "-I$out_root" "-I$src_root"
+cxx.poptions =+ "-I$out_root" "-I$src_root" "-I$src_base/include"
 
 objs{*}: cxx.poptions += -DSPDLOG_SHARED_LIB -DFMT_EXPORT -DFMT_SHARED
 
 src/
 {
-    cxx.poptions =+ "-I$src_base/include" "-I$out_root" "-I$src_root"
     cxx.poptions += -DSPDLOG_COMPILED_LIB
     objs{*}: cxx.poptions += -DFMT_EXPORT -DFMT_SHARED
 }
@@ -38,7 +37,7 @@ src/
 #
 lib{spdlog}:
 {
-  cxx.export.poptions = "-I$out_root" "-I$src_root"
+  cxx.export.poptions = "-I$out_root" "-I$src_root" "-I$src_base/include"
   cxx.export.libs = $intf_libs
 }
 
