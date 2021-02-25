@@ -1,3 +1,9 @@
 import libs = spdlog%lib{spdlog}
 
-exe{driver}: tests_src/{cxx hxx}{**} $libs testscript{**}
+exe{driver}: tests_src/{cxx hxx}{** -test_systemd} $libs testscript{**}
+
+if($cxx.target.class == 'linux')
+{
+    exe{driver} : tests_src/cxx{test_systemd}
+    exe{driver} : cxx.libs += -lsystemd
+}
