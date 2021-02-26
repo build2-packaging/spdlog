@@ -33,8 +33,16 @@ objs{*}: cxx.poptions += -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS
 
 if($cxx.target.class == 'windows')
 {
-  cxx.libs += Advapi32.lib
-  lib{spdlog}: cxx.export.libs += Advapi32.lib
+  if($cxx.id == 'gcc')
+  {
+    cxx.libs += -LAdvapi32.lib
+    lib{spdlog}: cxx.export.libs += -LAdvapi32.lib
+  }
+  else
+  {
+    cxx.libs += Advapi32.lib
+    lib{spdlog}: cxx.export.libs += Advapi32.lib
+  }
 }
 
 # Export options.
