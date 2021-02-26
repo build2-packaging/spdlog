@@ -1,6 +1,6 @@
 import libs = spdlog%lib{spdlog}
 
-exe{driver}: tests_src/{cxx hxx}{** -test_systemd} $libs testscript{**}
+exe{driver}: tests_src/{cxx hxx}{** -test_systemd} tests_src/hxx{*.hpp} $libs testscript{**}
 
 if($cxx.target.class == 'linux')
 {
