@@ -1,6 +1,6 @@
 intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
-import impl_libs += fmt%lib{fmt}
+import intf_libs += fmt%lib{fmt}
 
 lib{spdlog}: {cxx hxx}{**} $impl_libs $intf_libs
 
@@ -61,13 +61,4 @@ else
 {
   install         = include/spdlog/
   install.subdirs = true
-}
-
-include/spdlog/
-{
-    {hxx ixx txx}{*}:
-    {
-        install = include/spdlog
-        install.subdirs = true
-    }
 }
