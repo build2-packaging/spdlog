@@ -4,7 +4,6 @@ import intf_libs += fmt%lib{fmt}
 
 lib{spdlog}: {cxx hxx}{**} $impl_libs $intf_libs
 
-cxx.poptions += -DSPDLOG_FMT_EXTERNAL
 
 if ($cxx.target.class != 'windows')
 {
@@ -26,24 +25,36 @@ if ($cxx.target.class != 'windows')
 # Build options.
 #
 cxx.poptions =+ "-I$out_root" "-I$src_root" "-I$src_base/include"
+cxx.poptions += -DSPDLOG_COMPILED_LIB
+# fmt is a package dependency
+cxx.poptions += -DSPDLOG_FMT_EXTERNAL
 
-objs{*}: cxx.poptions += -DSPDLOG_SHARED_LIB -DFMT_EXPORT -DFMT_SHARED
+objs{*}: cxx.poptions += -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS
 
-src/
+if($cxx.target.class == 'windows')
 {
-    cxx.poptions += -DSPDLOG_COMPILED_LIB
-    objs{*}: cxx.poptions += -DFMT_EXPORT -DFMT_SHARED
+  if($cxx.id == 'gcc')
+  {
+    cxx.libs += -LAdvapi32.lib
+    lib{spdlog}: cxx.export.libs += -LAdvapi32.lib
+  }
+  else
+  {
+    cxx.libs += Advapi32.lib
+    lib{spdlog}: cxx.export.libs += Advapi32.lib
+  }
 }
 
 # Export options.
 #
 lib{spdlog}:
 {
-  cxx.export.poptions = "-I$out_root" "-I$src_root" "-I$src_base/include"
-  cxx.export.libs = $intf_libs
+  cxx.export.poptions += "-I$out_root" "-I$src_root" "-I$src_base/include"
+  cxx.export.libs += $intf_libs
 }
 
-libs{spdlog}: cxx.export.poptions += -DSPDLOG_SHARED_LIB -DFMT_SHARED
+libs{spdlog}: cxx.export.poptions += -DSPDLOG_SHARED_LIB -DSPDLOG_FMT_EXTERNAL
+
 
 # For pre-releases use the complete version to make sure they cannot be used
 # in place of another pre-release or the final version. See the version module
