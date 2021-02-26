@@ -59,6 +59,6 @@ else
 #
 {hxx ixx txx}{*}:
 {
-  install         = include/spdlog/
+  install         = $install.root
   install.subdirs = true
 }
