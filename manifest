@@ -1,6 +1,6 @@
 : 1
 name: spdlog
-version: 1.8.3
+version: 1.8.2
 summary: Fast C++ logging library.
 license: MIT ; MIT License
 topics: logging, C++
