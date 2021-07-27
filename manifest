@@ -20,5 +20,7 @@ depends: * bpkg >= 0.13.0
 depends: fmt ^8.0.1
 
 build-exclude: windows*-gcc**                ; Builds but some tests fails, use at your own risks.
-# build-exclude: macos_11-clang_12.0-static_O3 ; Compiler error, use at your own risks.
+build-exclude: windows_10-clang_12.0**       ; Compiler error, use at your own risks.
+build-exclude: macos_11-clang_12.0**         ; Compiler error, use at your own risks.
+build-exclude: linux_debian_10-emcc_2.0.25   ; Compiler error, use at your own risks.
 build-exclude: macos_11-gcc_11.1**           ; Compiler Bug, use at your own risks.
