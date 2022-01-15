@@ -26,8 +26,10 @@ if ($cxx.target.class != 'windows')
 #
 cxx.poptions =+ "-I$out_root" "-I$src_root" "-I$src_base/include"
 cxx.poptions += -DSPDLOG_COMPILED_LIB
+
 # fmt is a package dependency
 cxx.poptions += -DSPDLOG_FMT_EXTERNAL
+config.export.poptions += -DSPDLOG_FMT_EXTERNAL
 
 objs{*}: cxx.poptions += -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS
 
