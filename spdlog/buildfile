@@ -2,8 +2,8 @@ intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
 import intf_libs += fmt%lib{fmt}
 
-lib{spdlog}: {cxx hxx}{**} $impl_libs $intf_libs
-
+lib{spdlog}: {cxx hxx}{**} $impl_libs $intf_libs 
+lib{spdlog}: config.export.poptions="-DSPDLOG_FMT_EXTERNAL"
 
 if ($cxx.target.class != 'windows')
 {
@@ -29,7 +29,6 @@ cxx.poptions += -DSPDLOG_COMPILED_LIB
 
 # fmt is a package dependency
 cxx.poptions += -DSPDLOG_FMT_EXTERNAL
-config.export.poptions += -DSPDLOG_FMT_EXTERNAL
 
 objs{*}: cxx.poptions += -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS
 
