@@ -1,0 +1,5 @@
+spdlog-tests
+
+# Testscript output directory (can be symlink).
+#
+test-spdlog-tests
