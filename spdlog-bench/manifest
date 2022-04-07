@@ -13,3 +13,5 @@ depends: * bpkg >= 0.14.0
 
 depends: google-benchmark ^1.6.0
 depends: spdlog == 1.10.0
+
+build-exclude: linux_debian_10-emcc_2.0.25   ; Compiler error, use at your own risks.
