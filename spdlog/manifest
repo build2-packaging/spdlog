@@ -6,7 +6,7 @@ summary: Fast C++ logging library.
 license: MIT ; MIT License
 topics: logging, C++
 keywords: logging c++ fast modern
-description-file: upstream/README.md
+description-file: ../upstream/README.md
 src-url: https://github.com/gabime/spdlog
 doc-url: https://github.com/gabime/spdlog/wiki
 package-url: https://github.com/build2-packaging/spdlog
@@ -20,5 +20,5 @@ depends: * bpkg >= 0.13.0
 
 depends: fmt ^8.1.1
 
-build-exclude: windows*-clang_13** 
-build-exclude: linux*-clang_13** 
+build-exclude: windows*-clang_13**
+build-exclude: linux*-clang_13**

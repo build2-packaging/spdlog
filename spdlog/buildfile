@@ -1,1 +1,1 @@
-./: {*/ -build/} ../upstream/doc{README.md LICENSE} doc{README.md} manifest
+./: {*/ -build/} $src_base/../upstream/doc{README.md LICENSE} doc{README.md} manifest
