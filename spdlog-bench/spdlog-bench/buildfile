@@ -1,6 +1,9 @@
-libs =
-#import libs += libhello%lib{hello}
+import libs = spdlog%lib{spdlog}
+import libs += google-benchmark%lib{benchmark}
 
-exe{spdlog-bench}: {hxx ixx txx cxx}{**} $libs testscript
+./: exe{async-bench}: cxx{async_bench} $libs
+./: exe{bench}: cxx{bench} $libs
+./: exe{formatter-bench}: cxx{formatter-bench} $libs
+./: exe{latency}: cxx{latency} $libs
 
 cxx.poptions =+ "-I$out_root" "-I$src_root"
