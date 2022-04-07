@@ -20,5 +20,4 @@ depends: * bpkg >= 0.13.0
 
 depends: fmt ^8.1.1
 
-build-exclude: windows*-clang_13**
-build-exclude: linux*-clang_13**
+build-exclude: linux_debian_10-emcc_2.0.25   ; Compiler error, use at your own risks.
