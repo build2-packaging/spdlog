@@ -12,3 +12,4 @@ depends: * build2 >= 0.14.0
 depends: * bpkg >= 0.14.0
 
 depends: google-benchmark ^1.6.0
+depends: spdlog == 1.10.0

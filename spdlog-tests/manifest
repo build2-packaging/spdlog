@@ -10,3 +10,5 @@ email: wmbat-dev@protonmail.com
 #build-error-email: wmbat-dev@protonmail.com
 depends: * build2 >= 0.14.0
 depends: * bpkg >= 0.14.0
+
+depends: spdlog == 1.10.0
