@@ -2,7 +2,7 @@ spdlog-bench
 
 # Testscript output directory (can be symlink).
 #
-# async-bench
-# bench
-# formatter-bench
-# latency
+async-bench
+bench
+formatter-bench
+latency

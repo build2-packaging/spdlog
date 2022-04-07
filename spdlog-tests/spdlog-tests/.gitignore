@@ -2,4 +2,4 @@ spdlog-tests
 
 # Testscript output directory (can be symlink).
 #
-# driver
+driver
