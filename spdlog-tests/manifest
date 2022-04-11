@@ -3,14 +3,17 @@ name: spdlog-tests
 version: 1.10.0
 project: spdlog
 summary: spdlog-tests C++ executable
-license: other: proprietary ; Not free/open source.
-description-file: README.md
-url: https://example.org/spdlog
-email: wmbat-dev@protonmail.com
-#build-error-email: wmbat-dev@protonmail.com
+topics: logging, C++
+keywords: logging c++ fast modern
+license: MIT ; MIT License
+src-url: https://github.com/gabime/spdlog
+doc-url: https://github.com/gabime/spdlog/wiki
+package-url: https://github.com/build2-packaging/spdlog
+email: gmelman1@gmail.com
+package-email: wmbat-dev@protonmail.com
 depends: * build2 >= 0.14.0
 depends: * bpkg >= 0.14.0
 
-depends: spdlog == 1.10.0
+depends: spdlog == $
 
 build-exclude: linux_debian_10-emcc_2.0.25   ; Compiler error, use at your own risks.

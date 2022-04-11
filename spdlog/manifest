@@ -11,7 +11,7 @@ src-url: https://github.com/gabime/spdlog
 doc-url: https://github.com/gabime/spdlog/wiki
 package-url: https://github.com/build2-packaging/spdlog
 email: gmelman1@gmail.com
-package-email: wmbat@protonmail.com
+package-email: wmbat-dev@protonmail.com
 
 requires: c++ >= 11
 
