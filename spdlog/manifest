@@ -1,24 +1,23 @@
 : 1
 name: spdlog
-version: 1.9.2
+version: 1.10.0
+project: spdlog
 summary: Fast C++ logging library.
 license: MIT ; MIT License
 topics: logging, C++
 keywords: logging c++ fast modern
-description-file: upstream/README.md
+description-file: ../upstream/README.md
 src-url: https://github.com/gabime/spdlog
 doc-url: https://github.com/gabime/spdlog/wiki
 package-url: https://github.com/build2-packaging/spdlog
 email: gmelman1@gmail.com
-package-email: wmbat@protonmail.com
+package-email: wmbat-dev@protonmail.com
 
 requires: c++ >= 11
 
 depends: * build2 >= 0.13.0
 depends: * bpkg >= 0.13.0
 
-depends: fmt ^8.0.1
+depends: fmt ^8.1.1
 
-build-exclude: windows*-gcc**                ; Builds but some tests fails, use at your own risks.
 build-exclude: linux_debian_10-emcc_2.0.25   ; Compiler error, use at your own risks.
-build-exclude: macos_11-gcc_11.1**           ; Compiler Bug, use at your own risks.

@@ -1,0 +1,22 @@
+: 1
+name: spdlog-bench
+version: 1.10.0
+project: spdlog
+summary: spdlog-bench C++ executable
+topics: logging, C++
+keywords: logging c++ fast modern
+license: MIT ; MIT License
+src-url: https://github.com/gabime/spdlog
+doc-url: https://github.com/gabime/spdlog/wiki
+package-url: https://github.com/build2-packaging/spdlog
+email: gmelman1@gmail.com
+package-email: wmbat-dev@protonmail.com
+
+#build-error-email: wmbat-dev@protonmail.com
+depends: * build2 >= 0.14.0
+depends: * bpkg >= 0.14.0
+
+depends: google-benchmark ^1.6.0
+depends: spdlog == $
+
+build-exclude: linux_debian_10-emcc_2.0.25   ; Compiler error, use at your own risks.

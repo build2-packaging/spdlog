@@ -1,5 +1,4 @@
-./: {*/ -build/ -upstream/ -test_logs/} upstream/doc{README.md LICENSE} doc{README.md LICENSE} manifest
+import pkgs = [dir_paths] $process.run_regex(\
+  cat $src_root/packages.manifest, '\s*location\s*:\s*(\S+)\s*', '\1')
 
-# Don't install tests.
-#
-tests/: install = false
+./: $pkgs

@@ -1,0 +1,5 @@
+import libs = spdlog%lib{spdlog}
+
+exe{driver}: tests_src/{cxx hxx}{** -test_systemd -test_misc} tests_src/hxx{*.hpp} $libs testscript{**}
+
+cxx.poptions =+ "-I$out_root" "-I$src_root"

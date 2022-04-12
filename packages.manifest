@@ -1,0 +1,6 @@
+:1
+location: spdlog/
+:
+location: spdlog-tests/
+:
+location: spdlog-bench/
