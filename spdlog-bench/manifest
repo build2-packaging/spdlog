@@ -1,6 +1,6 @@
 : 1
 name: spdlog-bench
-version: 1.10.0
+version: 1.10.0+1
 project: spdlog
 summary: spdlog-bench C++ executable
 topics: logging, C++
