@@ -2,7 +2,7 @@
 name: spdlog-tests
 version: 1.10.0+1
 project: spdlog
-summary: spdlog-tests C++ executable
+summary: Tests package for spdlog
 topics: logging, C++
 keywords: logging c++ fast modern
 license: MIT ; MIT License
@@ -13,7 +13,3 @@ email: gmelman1@gmail.com
 package-email: wmbat-dev@protonmail.com
 depends: * build2 >= 0.14.0
 depends: * bpkg >= 0.14.0
-
-depends: spdlog == $
-
-build-exclude: linux_debian_10-emcc_2.0.25   ; Compiler error, use at your own risks.
