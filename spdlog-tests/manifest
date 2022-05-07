@@ -1,6 +1,6 @@
 : 1
 name: spdlog-tests
-version: 1.10.0+1
+version: 1.10.0+2
 project: spdlog
 summary: Tests package for spdlog
 topics: logging, C++
