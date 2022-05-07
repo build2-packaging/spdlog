@@ -1,8 +1,8 @@
 : 1
 name: spdlog-bench
-version: 1.10.0+1
+version: 1.10.0+2
 project: spdlog
-summary: spdlog-bench C++ executable
+summary: Benchmarks package for spdlog
 topics: logging, C++
 keywords: logging c++ fast modern
 license: MIT ; MIT License
@@ -17,6 +17,3 @@ depends: * build2 >= 0.14.0
 depends: * bpkg >= 0.14.0
 
 depends: google-benchmark ^1.6.0
-depends: spdlog == $
-
-build-exclude: linux_debian_10-emcc_2.0.25   ; Compiler error, use at your own risks.

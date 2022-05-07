@@ -1,11 +1,13 @@
 : 1
 name: spdlog
-version: 1.10.0+1
+version: 1.10.0+2
 project: spdlog
 summary: Fast C++ logging library.
 license: MIT ; MIT License
 topics: logging, C++
 keywords: logging c++ fast modern
+tests: spdlog-tests == $
+benchmarks: spdlog-bench == $
 description-file: README.md
 src-url: https://github.com/gabime/spdlog
 doc-url: https://github.com/gabime/spdlog/wiki
