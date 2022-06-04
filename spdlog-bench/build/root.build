@@ -18,3 +18,7 @@ hxx{*}: cxx.importable = true
 # The test target for cross-testing (running tests under Wine, etc).
 #
 test.target = $cxx.target
+
+# Every exe{} in this subproject is by default a test.
+#
+exe{*}: test = true
