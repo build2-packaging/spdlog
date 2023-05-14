@@ -3,7 +3,7 @@ import libs += google-benchmark%lib{benchmark}
 
 ./: exe{async-bench}: bench_src/cxx{async_bench} bench_src/hxx{*} $libs
 # ./: exe{bench}: bench_src/cxx{bench} bench_src/hxx{*} $libs
-./: exe{formatter-bench}: bench_src/cxx{formatter-bench} bench_src/hxx{*} formatter_bench_script $libs
+./: exe{formatter-bench}: bench_src/cxx{formatter-bench} bench_src/hxx{*} testscript{*} $libs
 ./: exe{latency}: bench_src/cxx{latency} bench_src/hxx{*} $libs
 
 cxx.poptions =+ "-I$out_root" "-I$src_root"
