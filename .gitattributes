@@ -17,3 +17,8 @@
 # Use `binary` to make sure certain files are never auto-detected as text.
 #
 #*.png binary
+
+spdlog-bench/spdlog-bench/bench_src symlink=dir
+spdlog-tests/spdlog-tests/tests_src symlink=dir
+spdlog/spdlog/include symlink=dir
+spdlog/spdlog/src symlink=dir
