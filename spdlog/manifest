@@ -1,6 +1,6 @@
 : 1
 name: spdlog
-version: 1.10.0+3
+version: 1.11.0
 project: spdlog
 summary: Fast C++ logging library.
 license: MIT ; MIT License
@@ -20,6 +20,6 @@ requires: c++ >= 11
 depends: * build2 >= 0.13.0
 depends: * bpkg >= 0.13.0
 
-depends: fmt ^8.1.1
+depends: fmt ^9.1.0
 
 build-exclude: linux_debian_10-emcc_2.0.25   ; Compiler error, use at your own risks.

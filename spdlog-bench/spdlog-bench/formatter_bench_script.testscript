@@ -1,0 +1,4 @@
+
+# Pass the 'all' command line argument to the formatter bench
+# and expect output on both stdin and stdout
+$* 'all' 1>- 2>- 
