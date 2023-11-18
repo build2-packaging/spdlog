@@ -13,3 +13,4 @@ email: gmelman1@gmail.com
 package-email: wmbat-dev@protonmail.com
 depends: * build2 >= 0.14.0
 depends: * bpkg >= 0.14.0
+depends: catch2 ^3.3.2
