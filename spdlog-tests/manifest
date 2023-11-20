@@ -1,6 +1,6 @@
 : 1
 name: spdlog-tests
-version: 1.11.0+1
+version: 1.12.0-a.0.z
 project: spdlog
 summary: Tests package for spdlog
 topics: logging, C++
@@ -13,3 +13,4 @@ email: gmelman1@gmail.com
 package-email: wmbat-dev@protonmail.com
 depends: * build2 >= 0.14.0
 depends: * bpkg >= 0.14.0
+depends: catch2 ^3.3.2

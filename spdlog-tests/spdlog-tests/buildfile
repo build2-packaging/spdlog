@@ -1,4 +1,4 @@
-import libs = spdlog%lib{spdlog}
+import libs = spdlog%lib{spdlog} catch2%liba{catch2wmain}
 
 exe{driver}: tests_src/{cxx hxx}{** -test_systemd -test_misc} tests_src/hxx{*.hpp} $libs testscript{**}
 
