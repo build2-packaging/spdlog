@@ -1,0 +1,6 @@
+: 1
+name: spdlog-bench
+version: 1.11.0+1
+project: spdlog
+summary: Benchmarks package for spdlog
+license: MIT; MIT License

@@ -1,0 +1,6 @@
+: 1
+name: spdlog-tests
+version: 1.11.0+1
+project: spdlog
+summary: Tests package for spdlog
+license: MIT; MIT License
