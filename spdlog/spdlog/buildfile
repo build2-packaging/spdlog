@@ -35,8 +35,8 @@ if($cxx.target.class == 'windows')
 {
   if($cxx.id == 'gcc')
   {
-    cxx.libs += -LAdvapi32.lib
-    lib{spdlog}: cxx.export.libs += -LAdvapi32.lib
+    cxx.libs += -ladvapi32
+    lib{spdlog}: cxx.export.libs += -ladvapi32
   }
   else
   {
