@@ -1,6 +1,6 @@
 : 1
 name: spdlog-bench
-version: 1.12.0
+version: 1.14.1-a.0.z
 project: spdlog
 summary: Benchmarks package for spdlog
 topics: logging, C++
