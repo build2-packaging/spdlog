@@ -1,5 +1,5 @@
 import libs = spdlog%lib{spdlog} catch2%liba{catch2wmain}
 
-exe{driver}: tests_src/{cxx hxx}{** -test_systemd -test_misc} tests_src/hxx{*.hpp} $libs testscript{**}
+exe{driver}: tests_src/{cxx hxx}{** -test_systemd} tests_src/hxx{*.hpp} $libs testscript{**}
 
 cxx.poptions =+ "-I$out_root" "-I$src_root"
