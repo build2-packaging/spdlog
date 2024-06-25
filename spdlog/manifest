@@ -22,7 +22,4 @@ depends: * bpkg >= 0.13.0
 
 depends: fmt ^10.1.1
 
-tests: spdlog-tests == $
-benchmarks: spdlog-benchmarks == $
-
 build-exclude: linux_debian_10-emcc_2.0.25   ; Compiler error, use at your own risks.
