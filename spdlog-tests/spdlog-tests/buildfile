@@ -1,6 +1,7 @@
 import libs = spdlog%lib{spdlog} catch2%liba{catch2wmain}
 
-exe{driver}: tests_src/{cxx hxx}{** -test_systemd -test_timezone} tests_src/hxx{*.hpp} $libs testscript
+exe{driver}: tests_src/{cxx hxx}{** -test_systemd -test_timezone} tests_src/hxx{*.hpp} \
+  cxx{shutdown_listener} $libs testscript
 
 # The timezone test uses _dupenv_s() on Windows, which MinGW does not provide.
 #
