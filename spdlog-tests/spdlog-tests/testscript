@@ -3,4 +3,8 @@
 # that ran last, so their cleanup is optional. Run the tests in declaration
 # order, as upstream does.
 #
-$* --order decl >| 2>| &?test_logs/*** &?log_tests/*** &?filename_*
+# Skip the test that asserts from multiple threads, which Catch2 does not
+# support (data race that can crash the test driver).
+#
+$* --order decl '~mdc different threads' >| 2>| \
+   &?test_logs/*** &?log_tests/*** &?filename_*
