@@ -23,7 +23,3 @@
 *.exe.dlls/
 *.exe.manifest
 *.pc
-
-# spdlog logs
-test_logs/
-filename_*

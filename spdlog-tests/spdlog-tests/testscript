@@ -1,0 +1,6 @@
+# The upstream tests create these files and directories in the current
+# working directory. Which of them remain at the end depends on the tests
+# that ran last, so their cleanup is optional. Run the tests in declaration
+# order, as upstream does.
+#
+$* --order decl >| 2>| &?test_logs/*** &?log_tests/*** &?filename_*
