@@ -19,6 +19,6 @@ hxx{*}: cxx.importable = true
 #
 test.target = $cxx.target
 
-# Every exe{} in this subproject is by default a test.
+# Every exe{} in this subproject is not by default a test (too slow).
 #
-exe{*}: test = true
+exe{*}: test = false
