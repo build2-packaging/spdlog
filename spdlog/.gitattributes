@@ -1,0 +1,3 @@
+spdlog/include/spdlog/cfg symlink=dir
+spdlog/include/spdlog/fmt symlink=dir
+spdlog/include/spdlog/sinks symlink=dir
