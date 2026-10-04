@@ -7,3 +7,8 @@ exe{driver}: tests_src/{cxx hxx}{** -test_systemd -test_timezone} tests_src/hxx{
 exe{driver}: tests_src/cxx{test_timezone}: include = ($cxx.target.system != 'mingw32')
 
 cxx.poptions =+ "-I$out_root" "-I$src_root"
+
+# Disable the dll-interface warnings for the shared library, as upstream does.
+#
+if ($cxx.id == 'msvc')
+  cxx.coptions += /wd4251 /wd4275

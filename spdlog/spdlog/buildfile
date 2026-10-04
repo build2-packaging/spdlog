@@ -35,6 +35,11 @@ cxx.poptions += -DSPDLOG_FMT_EXTERNAL
 
 objs{*}: cxx.poptions += -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS
 
+# Disable the dll-interface warnings for the shared library, as upstream does.
+#
+if ($cxx.id == 'msvc')
+  objs{*}: cxx.coptions += /wd4251 /wd4275
+
 if($cxx.target.class == 'windows')
 {
   if($cxx.id == 'gcc')
