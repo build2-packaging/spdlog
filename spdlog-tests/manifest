@@ -1,6 +1,6 @@
 : 1
 name: spdlog-tests
-version: 1.17.0-a.0.z
+version: 1.17.0
 project: spdlog
 summary: C++ logging library (tests)
 topics: logging, C++
