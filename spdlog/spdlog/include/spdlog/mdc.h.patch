@@ -1,0 +1,23 @@
+--- mdc.h.orig	2026-10-04 21:08:34 +0200
++++ mdc.h	2026-10-04 21:08:41 +0200
+@@ -43,10 +43,16 @@
+ 
+     static void clear() { get_context().clear(); }
+ 
+-    static mdc_map_t &get_context() {
+-        static thread_local mdc_map_t context;
+-        return context;
+-    }
++    // Defined out-of-line (mdc-inl.h) so exactly one instance of the
++    // thread-local map is compiled into the library: MinGW does not
++    // import inline member functions of a dllimport class, so leaving
++    // this inline gives the DLL and each consumer their own separate
++    // copy of the map.
++    static mdc_map_t &get_context();
+ };
+ 
+ }  // namespace spdlog
++
++#ifdef SPDLOG_HEADER_ONLY
++#include "mdc-inl.h"
++#endif
