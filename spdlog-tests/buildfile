@@ -1,1 +1,1 @@
-./: {*/ -build/ -test_logs/} doc{README.md} legal{LICENSE} manifest
+./: {*/ -build/ -test_logs/} doc{README.md PACKAGE-README.md} legal{LICENSE} manifest

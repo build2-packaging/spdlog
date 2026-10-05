@@ -6,6 +6,7 @@ summary: C++ logging library (tests)
 topics: logging, C++
 keywords: logging c++ fast modern
 license: MIT ; MIT License
+package-description-file: PACKAGE-README.md
 src-url: https://github.com/gabime/spdlog
 doc-url: https://github.com/gabime/spdlog/wiki
 package-url: https://github.com/build2-packaging/spdlog
