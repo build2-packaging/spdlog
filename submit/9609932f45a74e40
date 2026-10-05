@@ -1,0 +1,6 @@
+: 1
+name: spdlog-tests
+version: 1.17.0
+project: spdlog
+summary: C++ logging library (tests)
+license: MIT; MIT License
