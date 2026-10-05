@@ -13,7 +13,6 @@
 #include <spdlog/details/os-inl.h>
 #include <spdlog/details/registry-inl.h>
 #include <spdlog/logger-inl.h>
-#include <spdlog/mdc-inl.h>
 #include <spdlog/pattern_formatter-inl.h>
 #include <spdlog/sinks/base_sink-inl.h>
 #include <spdlog/sinks/sink-inl.h>

@@ -1,0 +1,10 @@
+--- spdlog.cpp.orig	2026-10-04 21:09:02 +0200
++++ spdlog.cpp	2026-10-04 21:09:05 +0200
+@@ -13,6 +13,7 @@
+ #include <spdlog/details/os-inl.h>
+ #include <spdlog/details/registry-inl.h>
+ #include <spdlog/logger-inl.h>
++#include <spdlog/mdc-inl.h>
+ #include <spdlog/pattern_formatter-inl.h>
+ #include <spdlog/sinks/base_sink-inl.h>
+ #include <spdlog/sinks/sink-inl.h>
