@@ -2,7 +2,7 @@
 name: spdlog-bench
 version: 1.17.0-a.0.z
 project: spdlog
-summary: Benchmarks package for spdlog
+summary: C++ logging library (benchmarks)
 topics: logging, C++
 keywords: logging c++ fast modern
 license: MIT ; MIT License

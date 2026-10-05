@@ -2,7 +2,7 @@
 name: spdlog-tests
 version: 1.17.0-a.0.z
 project: spdlog
-summary: Tests package for spdlog
+summary: C++ logging library (tests)
 topics: logging, C++
 keywords: logging c++ fast modern
 license: MIT ; MIT License

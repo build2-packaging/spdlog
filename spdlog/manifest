@@ -2,7 +2,7 @@
 name: spdlog
 version: 1.17.0-a.0.z
 project: spdlog
-summary: Fast C++ logging library.
+summary: C++ logging library
 license: MIT ; MIT License
 topics: logging, C++
 keywords: logging c++ fast modern
